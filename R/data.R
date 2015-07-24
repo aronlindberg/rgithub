@@ -43,8 +43,8 @@ create.blob <- function(owner, repo, content, ctx = get.github.context())
 #' @param ctx the github context object
 #'
 #' @return the commit
-get.commit <- function(owner, repo, sha, git = git, ctx = get.github.context())
-  .api.get.request(ctx, c("repos", owner, repo, git, "commits", sha))
+get.commit <- function(owner, repo, ..., sha, git = git, ctx = get.github.context())
+  .api.get.request(ctx, c("repos", owner, repo, git, "commits", sha), params=list(...))
 
 #' create a commit
 #'
